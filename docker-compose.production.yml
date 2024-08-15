@@ -22,7 +22,6 @@ services:
   frontend:
     image: hihix/kittygram_frontend
     env_file: .env
-    build: ./frontend/
     command: cp -r /app/build/. /static/
     volumes:
       - static_volume:/frontend_static
