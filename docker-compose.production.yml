@@ -20,7 +20,7 @@ services:
       - db
 
   frontend:
-    imdge: hihix/kittygram_frontend
+    image: hihix/kittygram_frontend
     env_file: .env
     build: ./frontend/
     command: cp -r /app/build/. /static/
