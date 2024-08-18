@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 
-from django.core.maangment.utils import get_random_secret_key
+from django.core.managment.utils import get_random_secret_key
 from dotenv import load_dotenv
 
 load_dotenv()
