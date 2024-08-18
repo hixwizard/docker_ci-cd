@@ -57,7 +57,7 @@ jobs:
           push: true
           tags: hihix/kittygram_backend:latest
           rules:
-            - if: '$CI_COMMIT_BRANCH == "main"'
+          - if: '$CI_COMMIT_BRANCH == "main"'
   frontend_tests:
     runs-on: ubuntu-latest
     steps:
@@ -95,7 +95,7 @@ jobs:
           push: true
           tags: hihix/kittygram_frontend:latest
           rules:
-            - if: '$CI_COMMIT_BRANCH == "main"'
+          - if: '$CI_COMMIT_BRANCH == "main"'
   build_gateway_and_push_to_docker_hub:
     name: Push gateway Docker image to DockerHub
     runs-on: ubuntu-latest
@@ -116,7 +116,7 @@ jobs:
           push: true
           tags: hihix/kittygram_gateway:latest
           rules:
-            - if: '$CI_COMMIT_BRANCH == "main"'
+          - if: '$CI_COMMIT_BRANCH == "main"'
   deploy:
     runs-on: ubuntu-latest
     needs:
@@ -139,7 +139,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           rules:
-            - if: '$CI_COMMIT_BRANCH == "main"'
+          - if: '$CI_COMMIT_BRANCH == "main"'
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
@@ -163,4 +163,4 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: Деплой успешно выполнен!
         rules:
-          - if: '$CI_COMMIT_BRANCH == "main"'
+        - if: '$CI_COMMIT_BRANCH == "main"'
