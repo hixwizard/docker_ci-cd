@@ -1,3 +1,5 @@
+![Build Status](https://github.com/hix9/kittygram_final/actions/workflows/main.yml/badge.svg)
+Развёрнутый проект(https://kitty-test.sytes.net/)
 #  Как работать с репозиторием финального задания
 
 ## Что нужно сделать
