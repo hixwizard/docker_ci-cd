@@ -38,8 +38,7 @@ jobs:
         python -m flake8 backend/
         cd backend/
         python manage.py test
-
- push:
+  push:
    branches:
      - main
 jobs:
