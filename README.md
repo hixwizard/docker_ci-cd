@@ -99,8 +99,8 @@ docker compose -f docker-compose.yml exec backend python manage.py migrate
 docker compose -f docker-compose.yml exec backend python manage.py collectstatic
 ```
 ### Описание проекта "Контейнеты для Kittygram и CI/CD"
-%Архитектура проекта%
 ```mermaid
+%% Архитектура проекта
 graph LR;
   nginx --> backend <--> postgresql;
   nginx --> frontend;
