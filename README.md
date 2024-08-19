@@ -64,4 +64,4 @@ graph LR;
 | GitHub Actions | Технология для автоматизации процесса развёртки. |
 | CI/CD | Методология процессов разработки, тестирования и доставки программного обеспечения. |
 #### Автор: [Баринов Станислав](https://github.com/hix9)
-#### Tools: Linux(fish, tmux), VSCode(optional)
+#### Tools: Linux(fish, tmux) nano, VSCode(optional)
