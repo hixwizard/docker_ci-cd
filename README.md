@@ -31,11 +31,11 @@ docker compose -f docker-compose.production.yml exec backend cp -r /app/static/.
  - в проекте предусмотрена работа на локальном адресе http://localhost:9000
  - запустите команду для сборки в фоновом режиме(требуется разрешение администратора для всех операций с Docker)
 ```
-docker compose -f docker-compose.production.yml up -d
+docker compose -f docker-compose.yml up -d
 ```
  - Выполните миграции в директории с файлом docker.compose.prodictuin/yml для работы с БД
 ```
-docker compose -f docker-compose.production.yml exec backend python manage.py migrate
+docker compose -f docker-compose.yml exec backend python manage.py migrate
 ```
 ##### Вы можете использовать обычную версию для тестирования самого приложения, если заходите его модифицировать, перед тем, как запускать на сервере.
 ### Описание проекта "Контейнеты для Kittygram и CI/CD"
@@ -47,7 +47,10 @@ graph LR;
 #### В проекте настроена гибкая система автоматического деплоя на сервер:
 1. Push в ветку main запустит весь процесс автоматического деполя
 2. Push в любую созданную ветку запустит тестирование, при этому сборка и деплой происходить не будут
-#### Описаны Dockerfile для последовательной сборки образов
+#### Описаны Dockerfile для сборки образов, используемых в проекте
+#### Описаны .yml сценарии для последовательной сборки образов:
+ - docker-compose.yml для локальной сборки
+ - docker-compose.production.yml для сборки на сервере с использованием CI/CD
 #### Описана конфигурация Nginx сервера для приёма внешних запросов:
  - сервер пропускает протоколы TLSv1.2 TLSv1.3 для защиты от атак типа "BEAST"
  - сервер принимает решение, какие шрифты использовать
@@ -61,4 +64,4 @@ graph LR;
 | GitHub Actions | Технология для автоматизации процесса развёртки. |
 | CI/CD | Методология процессов разработки, тестирования и доставки программного обеспечения. |
 #### Автор: [Баринов Станислав](https://github.com/hix9)
-#### Tools: Linux(fish, tmux)
+#### Tools: Linux(fish, tmux), VSCode(optional)
