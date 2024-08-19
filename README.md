@@ -100,10 +100,12 @@ docker compose -f docker-compose.yml exec backend python manage.py collectstatic
 ```
 ### Описание проекта "Контейнеты для Kittygram и CI/CD"
 ```mermaid
-%Архитектура проекта%
 graph LR;
   nginx --> backend <--> postgresql;
   nginx --> frontend;
+```
+```mermaid
+%% Архитектура проекта
 ```
 #### В проекте настроена гибкая система автоматического деплоя на сервер:
 1. Push в ветку main запустит весь процесс автоматического деполя
