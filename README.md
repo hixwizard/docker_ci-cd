@@ -77,7 +77,7 @@ docker compose -f docker-compose.production.yml up -d
 ```
 docker compose -f docker-compose.production.yml exec backend python manage.py migrate
 ```
- - соберите и скупируйте статику для корректой работы на сервере
+ - соберите и скопируйте статику для корректой работы на сервере
 ```
 docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
 docker compose -f docker-compose.production.yml exec backend cp -r /app/static/. /backend_static/static/
@@ -92,6 +92,10 @@ docker compose -f docker-compose.yml up -d
  - Выполните миграции в директории с файлом docker.compose.prodictuin/yml для работы с БД
 ```
 docker compose -f docker-compose.yml exec backend python manage.py migrate
+```
+ - соберите и скопируйте статику для корректого отображения
+```
+docker compose -f docker-compose.yml exec backend python manage.py collectstatic
 ```
 ### Описание проекта "Контейнеты для Kittygram и CI/CD"
 ```mermaid
