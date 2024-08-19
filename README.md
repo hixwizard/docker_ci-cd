@@ -49,6 +49,7 @@ docker compose -f docker-compose.production.yml exec backend python manage.py mi
 ```mermaid
 graph LR;
   nginx --> backend <--> postgresql;
+  nginx --> frontend;
 ```
 #### В проекте настроена гибкая система автоматического деплоя на сервер:
 1. Push в ветку main запустит весь процесс автоматического деполя
