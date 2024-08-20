@@ -1,4 +1,5 @@
 # flake8: noqa
+import ast
 import os
 from pathlib import Path
 
@@ -13,7 +14,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', default=get_random_secret_key())
 
 DEBUG = os.getenv('DEBUG_MODE')
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
+ALLOWED_HOSTS = ast.literal_eval(os.getenv('ALLOWED_HOSTS'))
 
 INSTALLED_APPS = [
     'django.contrib.admin',
